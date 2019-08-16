@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import {createClient} from "contentful"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const client = createClient({
+  space: process.env.REACT_APP_SPACE_ID,
+  accessToken: process.env.REACT_APP_CONTENT_DELIVERY_TOKEN
+})
 
-export default App;
+client.getEntries()
+  .then(entries => {
+    entries.items.forEach(entry => {
+      console.log(entry)
+    })
+  })
+
+const App = () =>
+  <header>
+    A test
+  </header>
+
+
+export default App
