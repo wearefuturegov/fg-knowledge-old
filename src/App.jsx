@@ -1,22 +1,14 @@
 import React from "react"
-import {createClient} from "contentful"
+import {BrowserRouter as Router, Route} from "react-router-dom"
 
-const client = createClient({
-  space: process.env.REACT_APP_SPACE_ID,
-  accessToken: process.env.REACT_APP_CONTENT_DELIVERY_TOKEN
-})
-
-client.getEntries()
-  .then(entries => {
-    entries.items.forEach(entry => {
-      console.log(entry)
-    })
-  })
+import Home from "./pages/Home"
+import Artefact from "./pages/Artefact"
 
 const App = () =>
-  <header>
-    A test
-  </header>
+  <Router>
+    <Route path="/" component={Home} exact/>
+    <Route path="/artefact/:id" component={Artefact} exact/>
+  </Router>
 
 
 export default App
