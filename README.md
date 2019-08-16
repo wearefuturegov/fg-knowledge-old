@@ -8,5 +8,6 @@ Deploys to master push automatically to Netlify.
 
 ## Running it locally
 
-1. Clone repo
-2. `npm i` and `npm start`
+Clone repo and create a `.env` file in the root with `REACT_APP_CONTENT_DELIVERY_TOKEN` defined.
+
+Then, `npm start`.
