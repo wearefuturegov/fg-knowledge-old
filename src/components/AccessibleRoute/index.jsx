@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react"
+import React, { useEffect, useRef } from "react"
 import { Route } from "react-router-dom"
 import styled from "styled-components"
 
@@ -25,6 +25,5 @@ const AccessibleRoute = (props) =>
             <Route {...props}/>
         </FocusOnMount>
     )}/>
-
 
 export default AccessibleRoute
