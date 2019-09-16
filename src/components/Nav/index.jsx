@@ -3,7 +3,12 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 import theme from "../_theme"
 
-const Navigation = styled.nav``
+const Navigation = styled.nav`
+    display: none;
+    @media screen and (min-width: ${theme.l}){
+        display: block;
+    }
+`
 
 const Ul = styled.ul`
     list-style: none;

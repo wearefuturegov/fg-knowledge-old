@@ -2,6 +2,7 @@ export default {
     // Colors
     dark: "#150810",
     grey: "#4F4E4F",
+    lightGrey: "#c4c4c4",
     purple: "#43387B",
     placeholderDark: "#706A8D",
     placeholder: "#C8C5D7",

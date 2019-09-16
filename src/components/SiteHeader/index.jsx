@@ -3,6 +3,7 @@ import logo from "./logo.svg"
 import styled from "styled-components"
 import theme from "../_theme"
 import Nav from "../Nav"
+import { Link } from "react-router-dom"
 
 const Outer = styled.header`
     padding: 20px 10%;
@@ -25,7 +26,7 @@ const Masthead = styled.div`
     align-items: center;
 `
 
-const A = styled.a`
+const StyledLink = styled(Link)`
     &:focus{
         background: ${theme.focus};
         outline: 3px solid ${theme.focus}
@@ -34,6 +35,8 @@ const A = styled.a`
 
 const Logo = styled.img`
     display: block;
+    width: 100%;
+    max-width: 325px;
 `
 
 const Tag = styled.span`
@@ -51,9 +54,9 @@ const SiteHeader = () =>
     <Outer>
         <Inner>
             <Masthead>
-                <A href="/">
+                <StyledLink to="/">
                     <h1><Logo src={logo} alt="FutureGov Knowledge"/></h1>
-                </A>
+                </StyledLink>
                 <Tag>Alpha</Tag>
             </Masthead>
             <Nav/>
