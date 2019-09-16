@@ -5,11 +5,14 @@ import hero from "./hero.jpg"
 
 const Outer = styled.section`
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-image: url(${hero});
     padding: 50px 10%;
     @media screen and (min-width: ${theme.m}) {
         padding: 90px 15%;
+    }
+    @media screen and (min-width: ${theme.l}) {
+        padding: 110px 15%;
     }
 `
 
@@ -22,6 +25,9 @@ const TextBox = styled.div`
     padding: 25px;
     background: rgba(255,255,255,0.9);
     max-width: 85%;
+    @media screen and (min-width: 400px) {
+        max-width: 400px;
+    }
     @media screen and (min-width: ${theme.m}) {
         padding: 35px;
         max-width: 400px;
