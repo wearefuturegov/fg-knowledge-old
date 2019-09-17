@@ -25,7 +25,7 @@ const Form = styled.form`
     margin: 0 auto;
     max-width: ${theme.maxWidth};
     background: ${theme.white};
-    padding: 15px 0px;
+    padding: 20px 0px;
     @media screen and (min-width: ${theme.m}) {
         padding: 35px;
     }
@@ -43,32 +43,32 @@ const InvisibleLabel = styled.label`
     opacity: 0;
 `
 
-const Select = styled.select`
-    font-size: 1.2em;
-    color: ${theme.dark};
-    padding: 10px;
-    border: 1px solid ${theme.lightGrey};
-    background: ${theme.panelBackground};
-    border-radius: 5px;
-    width: 100%;
-    min-width: 1%;
-    appearance: none;
-    background-image: url(${downward});
-    background-size: 25px;
-    background-repeat: no-repeat;
-    background-position: 96%;
-    &::placeholder{
-        color: ${theme.placeholder};
-    }
-    @media screen and (min-width: ${theme.l}) {
-        font-size: 1.3em;
-        padding: 15px;
-    }
-    &:focus{
-        outline: none;
-        box-shadow: 0px 0px 0px 3px ${theme.focus};
-    }
-`
+// const Select = styled.select`
+//     font-size: 1.2em;
+//     color: ${theme.dark};
+//     padding: 10px;
+//     border: 1px solid ${theme.lightGrey};
+//     background: ${theme.panelBackground};
+//     border-radius: 5px;
+//     width: 100%;
+//     min-width: 1%;
+//     appearance: none;
+//     background-image: url(${downward});
+//     background-size: 25px;
+//     background-repeat: no-repeat;
+//     background-position: 96%;
+//     &::placeholder{
+//         color: ${theme.placeholder};
+//     }
+//     @media screen and (min-width: ${theme.l}) {
+//         font-size: 1.3em;
+//         padding: 15px;
+//     }
+//     &:focus{
+//         outline: none;
+//         box-shadow: 0px 0px 0px 3px ${theme.focus};
+//     }
+// `
 
 const Input = styled.input`
     font-size: 1.2em;
@@ -96,14 +96,12 @@ const Button = styled.button`
     position: absolute;
     right: 0px;
     top: 0px;
-    padding: 10px 15px;
+    bottom: 0px;
+    padding: 0px 20px;
     border-radius: 0px 5px 5px 0px;
     cursor: pointer;
-    background: none;
+    background: ${theme.purple};
     border: none;
-    @media screen and (min-width: ${theme.l}) {
-        padding: 16px;
-    }
     &:focus{
         outline: none;
         box-shadow: 0px 0px 0px 3px ${theme.focus};
@@ -127,8 +125,7 @@ const SearchBar = () => {
     return(
         <Outer>
             <Form onSubmit={handleSubmit}>
-
-                    <InvisibleLabel htmlFor="scope">Search for</InvisibleLabel>
+                    {/* <InvisibleLabel htmlFor="scope">Search for</InvisibleLabel>
                     <Select 
                         name="scope"
                         value={scope}
@@ -136,9 +133,7 @@ const SearchBar = () => {
                     >
                         <option value="everything">Everything</option>
                         <option value="artefacts">Artefacts</option>
-                    </Select>
-
-
+                    </Select> */}
                 <Container>
                     <InvisibleLabel htmlFor="query">Search query</InvisibleLabel>
                     <Input

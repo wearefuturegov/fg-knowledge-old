@@ -7,7 +7,7 @@ const Outer = styled.section`
     background-size: cover;
     background-position: top;
     background-image: url(${hero});
-    padding: 50px 10%;
+    padding: 50px 5%;
     @media screen and (min-width: ${theme.m}) {
         padding: 90px 15% 150px 15%;
     }
