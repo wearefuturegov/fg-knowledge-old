@@ -26,12 +26,16 @@ const Home = () => {
             <PageBody>
                 <PromoModule>
                     {artefacts.map(artefact => 
+                    <>
                         <Card
                             key={artefact.slug}
                             caption={artefact.project}
                             headline={artefact.title}
+                            image={artefact.image ? `https:${artefact.image.fields.file.url}?w=400` : ""}
                             to={`/artefact/${artefact.slug}`}
                         />
+                        {console.log(artefact)}
+                    </>
                     )}
                 </PromoModule>
             </PageBody>
