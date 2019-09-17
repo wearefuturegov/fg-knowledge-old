@@ -119,7 +119,6 @@ const SearchBar = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(query, scope)
     }
 
     return(

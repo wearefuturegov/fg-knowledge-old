@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@loadable/component": "^5.10.2",
+    "@reach/dialog": "^0.2.9",
     "contentful": "^7.9.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

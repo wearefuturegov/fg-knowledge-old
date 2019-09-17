@@ -6,7 +6,12 @@ import PromoModule from "../components/PromoModule"
 import Card from "../components/Card"
 import { fetchArtefacts } from "../services/contentful"
 
-const Home = () => {
+import { Route } from "react-router-dom"
+import Dialog from "../components/Dialog"
+
+const Home = ({
+    match
+}) => {
     const [artefacts, setArtefacts] = useState([])
 
     const getInitialData = async () => {
@@ -17,10 +22,14 @@ const Home = () => {
         getInitialData()
     }, [])
 
-    console.log(artefacts)
-
     return(
         <>
+
+            <Route
+                path={`/artefact/:slug`}
+                component={Dialog}
+            />
+
             <Hero/>
             <SearchBar/>
             <PageBody>
@@ -34,7 +43,6 @@ const Home = () => {
                             image={artefact.image ? `https:${artefact.image.fields.file.url}?w=400` : ""}
                             to={`/artefact/${artefact.slug}`}
                         />
-                        {console.log(artefact)}
                     </>
                     )}
                 </PromoModule>
