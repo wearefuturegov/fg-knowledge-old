@@ -10,7 +10,7 @@ export const fetchArtefacts = async () => {
     const entries = await client.getEntries({
         content_type: 'artefact',
     })
-    return entries.items
+    return entries.items.map(item => {return {...item.fields}})
 }
 
 // Return an array of matching artefacts for a given slug

@@ -63,8 +63,13 @@ const Intro = styled.p`
 `
 
 const ContentArea = styled.div`
-    padding: 80px;
-    background: pink;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    @media screen and (min-width: ${theme.m}){
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+    }
 `
 
 const PromoModule = ({

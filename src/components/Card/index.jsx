@@ -5,13 +5,23 @@ import theme from "../_theme"
 
 const Outer = styled(Link)`
     background: ${theme.white};
-    box-shadow: 0px 4px 2px ${theme.dark}50;
+    box-shadow: 0px 2px 4px ${theme.dark}10;
+    display: block;
+    text-decoration: none;
+    transition: box-shadow 0.1s ease-out;
+    &:hover{
+        box-shadow: 0px 2px 12px ${theme.dark}10 !important;
+    }
+    &:focus{
+        outline: 3px solid ${theme.focus}
+    }
 `
 
 const Img = styled.img`
     width: 100%;
     height: 200px;
     object-fit: cover;
+    background: ${theme.panelBackground};
 `
 
 const Inner = styled.div`

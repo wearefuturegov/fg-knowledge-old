@@ -6,6 +6,7 @@ import Nav from "../Nav"
 import { Link } from "react-router-dom"
 
 const Outer = styled.header`
+    background: ${theme.white};
     padding: 20px 5%;
     @media screen and (min-width: ${theme.m}) {
         padding: 20px 15%;
