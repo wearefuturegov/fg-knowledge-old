@@ -6,7 +6,7 @@ const Outer = styled.main`
     padding: 40px 5%;
     background: ${theme.panelBackground};
     @media screen and (min-width: ${theme.m}) {
-        padding: 110px 15%;
+        padding: 80px 15%;
     }
 `
 

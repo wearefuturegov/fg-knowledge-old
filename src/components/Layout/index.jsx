@@ -10,6 +10,10 @@ const Style = createGlobalStyle`
         box-sizing: border-box;
         font-family: proxima-nova, sans-serif; 
     }
+    
+    body{
+        background: ${theme.panelBackground};
+    }
 
     *::selection{
         background-color: ${theme.focus}50;

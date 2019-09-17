@@ -5,19 +5,16 @@ import eyeglass from "./eyeglass.svg"
 import downward from "./downward.svg"
 
 const Outer = styled.section`
-    padding: 0px 5%;
     position: relative;
     z-index: 1;
     @media screen and (min-width: ${theme.m}) {
         padding: 0px 15%;
         margin-top: -58px;
-        margin-bottom: -58px;
     }
     @media screen and (min-width: ${theme.l}) {
         padding: 0px 15%;
         padding: 0px 15%;
         margin-top: -73.5px;
-        margin-bottom: -73.5px;
     }
 `
 
@@ -25,7 +22,7 @@ const Form = styled.form`
     margin: 0 auto;
     max-width: ${theme.maxWidth};
     background: ${theme.white};
-    padding: 20px 0px;
+    padding: 20px 5%;
     @media screen and (min-width: ${theme.m}) {
         padding: 35px;
     }
@@ -102,6 +99,9 @@ const Button = styled.button`
     cursor: pointer;
     background: ${theme.purple};
     border: none;
+    &:hover{
+        filter: brightness(1.2)
+    }
     &:focus{
         outline: none;
         box-shadow: 0px 0px 0px 3px ${theme.focus};
