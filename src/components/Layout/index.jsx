@@ -1,6 +1,7 @@
 import React from "react"
 import SiteHeader from "../SiteHeader"
 import { createGlobalStyle } from "styled-components"
+import theme from "../_theme"
 
 const Style = createGlobalStyle`
     *{
@@ -9,6 +10,11 @@ const Style = createGlobalStyle`
         box-sizing: border-box;
         font-family: proxima-nova, sans-serif; 
     }
+
+    *::selection{
+        background-color: ${theme.focus}50;
+    }
+
 `
 
 const Layout = ({children}) =>
