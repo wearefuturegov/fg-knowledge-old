@@ -24,18 +24,15 @@ const Home = ({
 
     return(
         <>
-
             <Route
                 path={`/artefact/:slug`}
                 component={Dialog}
             />
-
             <Hero/>
             <SearchBar/>
             <PageBody>
                 <PromoModule>
                     {artefacts.map(artefact => 
-                    <>
                         <Card
                             key={artefact.slug}
                             caption={artefact.project}
@@ -43,7 +40,6 @@ const Home = ({
                             image={artefact.image ? `https:${artefact.image.fields.file.url}?w=400` : ""}
                             to={`/artefact/${artefact.slug}`}
                         />
-                    </>
                     )}
                 </PromoModule>
             </PageBody>
