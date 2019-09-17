@@ -5,7 +5,7 @@ import theme from "../_theme"
 
 const Navigation = styled.nav`
     display: none;
-    @media screen and (min-width: ${theme.l}){
+    @media screen and (min-width: 1200px){
         display: block;
     }
 `
