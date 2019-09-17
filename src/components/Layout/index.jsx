@@ -2,6 +2,7 @@ import React from "react"
 import SiteHeader from "../SiteHeader"
 import { createGlobalStyle } from "styled-components"
 import theme from "../_theme"
+import SiteFooter from "../SiteFooter"
 
 const Style = createGlobalStyle`
     *{
@@ -26,6 +27,7 @@ const Layout = ({children}) =>
         <Style/>
         <SiteHeader/>
         {children}
+        <SiteFooter/>
     </>
 
 export default Layout
