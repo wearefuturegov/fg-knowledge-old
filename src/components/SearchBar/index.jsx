@@ -28,10 +28,6 @@ const Form = styled.form`
     padding: 15px 0px;
     @media screen and (min-width: ${theme.m}) {
         padding: 35px;
-        display: grid;
-        grid-template-columns: 2fr 3fr;
-        grid-column-gap: 25px;
-        align-items: start;
     }
     @media screen and (min-width: ${theme.l}) {
         padding: 45px;
@@ -40,26 +36,11 @@ const Form = styled.form`
 
 const Container = styled.div`
     position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 15px;
-    &:last-of-type{
-        margin-bottom: 0px;
-    }
-    @media screen and (min-width: ${theme.m}) {
-        margin-bottom: 0px;
-    }
 `
 
 const InvisibleLabel = styled.label`
     font-size: 0;
     opacity: 0;
-`
-
-const Label = styled.label`
-    font-size: 1.2em;
-    margin-right: 25px;
 `
 
 const Select = styled.select`

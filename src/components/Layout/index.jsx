@@ -7,7 +7,7 @@ const Style = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Proxima Nova', sans-serif;
+        font-family: proxima-nova, sans-serif; 
     }
 `
 
