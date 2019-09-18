@@ -14,5 +14,6 @@ export default {
     // Breakpoints
     s: "600px",
     m: "850px",
+    ml: "1200px",
     l: "1500px"
 }

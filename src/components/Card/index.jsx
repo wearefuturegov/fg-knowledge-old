@@ -28,7 +28,7 @@ const Inner = styled.div`
 
 const Image = styled.div`
     display: none;
-    @media screen and (min-width: ${theme.l}){
+    @media screen and (min-width: ${theme.ml}){
         display: block;
         width: 150px;
         filter: brightness(0.95);

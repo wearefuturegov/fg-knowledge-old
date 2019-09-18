@@ -67,7 +67,7 @@ const ContentArea = styled.div`
     grid-template-columns: 1fr;
     grid-row-gap: 20px;
     grid-template-rows: 1fr 1fr;
-    @media screen and (min-width: ${theme.m}){
+    @media screen and (min-width: ${theme.s}){
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 20px;
     }
