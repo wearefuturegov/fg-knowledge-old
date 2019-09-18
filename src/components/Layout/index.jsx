@@ -19,7 +19,7 @@ const Style = createGlobalStyle`
         --reach-dialog: 1;
     }
     [data-reach-dialog-overlay] {
-        background: hsla(0, 0%, 0%, 0.5);
+        background: ${theme.dark}75;
         position: fixed;
         top: 0;
         right: 0;
@@ -27,7 +27,14 @@ const Style = createGlobalStyle`
         left: 0;
         overflow: auto;
         z-index: 2;
+        animation: fadeIn 0.1s ease-out;
     }
+
+    @keyframes fadeIn{
+        from{opacity:0}
+        to{opacity:1}
+    }
+
     [data-reach-dialog-content] {
         width: 80vw;
         margin: 10vh auto;

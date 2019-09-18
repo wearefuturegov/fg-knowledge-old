@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
     "@loadable/component": "^5.10.2",
     "@reach/dialog": "^0.2.9",
     "contentful": "^7.9.1",
