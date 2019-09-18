@@ -13,8 +13,12 @@ const Outer = styled.section`
         padding-top: 25px;
     }
     @media screen and (min-width: ${theme.l}){
-        grid-column-gap: 60px;
+        grid-template-columns: 1fr 3fr;
+        grid-column-gap: 80px;
     }
+    /* @media screen and (min-width: ${theme.xl}){
+        grid-column-gap: 60px;
+    } */
 `
 
 const Header = styled.header`
@@ -48,7 +52,7 @@ const Headline = styled.h2`
     color: ${theme.dark};
     @media screen and (min-width: ${theme.m}){
         font-size: 2em;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 `
 
@@ -57,7 +61,7 @@ const Intro = styled.p`
     @media screen and (min-width: ${theme.m}){
         display: block;
         font-size: 1.1em;
-        color: ${theme.grey};
+        color: ${theme.dark};
         margin-bottom: 15px;
     }
 `
@@ -79,7 +83,7 @@ const PromoModule = ({
     <Outer>
         <Header>
             <Headline>Artefacts</Headline>
-            <Intro>Optional left-hand side content goes in here</Intro>
+            <Intro>Examples of design, tech and change artefacts from our projects.</Intro>
             <SeeAll to="/artefacts">See all</SeeAll>
         </Header>
         <ContentArea>
