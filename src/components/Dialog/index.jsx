@@ -5,6 +5,7 @@ import styled from "styled-components"
 import theme from "../_theme"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import cross from "./cross.svg"
+import LinkBrick from "./LinkBrick"
 
 const StyledDialog = styled(Dialog)`
     max-width: 600px;
@@ -49,6 +50,7 @@ const Headline = styled.h1`
 
 const Description = styled.div`
     color: ${theme.dark};
+    line-height: 1.4;
     @media screen and (min-width: ${theme.m}){
         font-size: 1.1em;
     }
@@ -96,7 +98,6 @@ const CloseButton = styled.button`
     position: absolute;
     right: 10px;
     top: 10px;
-    font-size: 1em;
     cursor: pointer;
     background: none;
     border: none;
@@ -106,16 +107,8 @@ const CloseButton = styled.button`
     }
 `
 
-const LinkBrick = styled.a`
-    display: block;
-    background: ${theme.white};
-    box-shadow: 0px 2px 4px ${theme.dark}25;
-    margin-bottom: 35px;
-    text-decoration: none;
-    border-radius: 5px;
-    @media screen and (min-width: ${theme.m}){
-        margin-bottom: 45px;
-    }
+const CloseImg = styled.img`
+    width: 20px;
 `
 
 const ArtefactDialog = ({
@@ -135,51 +128,45 @@ const ArtefactDialog = ({
 
     const handleDismiss = () => history.push("/")
 
-    console.log(artefact)
-
     return(
         <StyledDialog onDismiss={handleDismiss}>
-            <CloseButton onClick={handleDismiss}><img src={cross} alt="close"/></CloseButton>
+            <CloseButton onClick={handleDismiss}><CloseImg src={cross} alt="close"/></CloseButton>
             <Header>
-                <Headline>{artefact.title}</Headline>
-                <Description>
-                    {documentToReactComponents(artefact.description)}
-                </Description>
+                {artefact &&
+                    <>
+                        <Headline>{artefact.title}</Headline>
+                        <Description>
+                            {documentToReactComponents(artefact.description)}
+                        </Description>
+                    </>
+                }
             </Header>
             <Body>
 
                 {artefact.fileUrLs &&
-                    <LinkBrick href={artefact.fileUrLs[0]} target="blank">
-                        {artefact.fileUrLs[0]}
-                    </LinkBrick>
+                    <LinkBrick 
+                        href={artefact.fileUrLs[0]} 
+                        image={artefact.image ? `https:${artefact.image.fields.file.url}?w=400` : ""}
+                    />
                 }
 
-
                 <FactoidList>
-                    {artefact.client &&
                         <Factoid>
                             <Label>Client</Label>
-                            <Value>{artefact.client.fields.name}</Value>
+                            <Value>{artefact.client ? artefact.client.fields.name : ""}</Value>
                         </Factoid>
-                    }
-                    {artefact.subject &&
                         <Factoid>
                             <Label>Subject</Label>
-                            <Value>{artefact.subject.fields.name}</Value>
+                            <Value>{artefact.subject ? artefact.subject.fields.name : ""}</Value>
                         </Factoid>
-                    }
-                    {artefact.project &&
                         <Factoid>
                             <Label>Project</Label>
-                            <Value>{artefact.project}</Value>
+                            <Value>{artefact.project || ""}</Value>
                         </Factoid>
-                    }
-                    {artefact.pointOfContact &&
                         <Factoid>
                             <Label>Point of contact</Label>
-                            <Value>{artefact.pointOfContact}</Value>
+                            <Value>{artefact.pointOfContact || ""}</Value>
                         </Factoid>
-                    }
                 </FactoidList>
             </Body>
         </StyledDialog>

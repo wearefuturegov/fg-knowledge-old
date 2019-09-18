@@ -13,7 +13,7 @@ const Inner = styled.div`
     margin: 0 5%;
     max-width: ${theme.maxWidth};
     @media screen and (min-width: ${theme.m}) {
-        margin: 0px 15%;
+        margin: 0px 12%;
     }
 `
 

@@ -9,10 +9,10 @@ const Outer = styled.section`
     background-image: url(${hero});
     padding: 50px 5%;
     @media screen and (min-width: ${theme.m}) {
-        padding: 90px 15% 150px 15%;
+        padding: 90px 15% 150px 12%;
     }
     @media screen and (min-width: ${theme.l}) {
-        padding: 110px 15% 180px 15%;
+        padding: 110px 15% 180px 12%;
     }
 `
 

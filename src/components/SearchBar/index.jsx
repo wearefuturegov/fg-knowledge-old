@@ -8,12 +8,10 @@ const Outer = styled.section`
     position: relative;
     z-index: 1;
     @media screen and (min-width: ${theme.m}) {
-        padding: 0px 15%;
+        padding: 0px 12%;
         margin-top: -58px;
     }
     @media screen and (min-width: ${theme.l}) {
-        padding: 0px 15%;
-        padding: 0px 15%;
         margin-top: -73.5px;
     }
 `

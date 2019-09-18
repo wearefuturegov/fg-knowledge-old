@@ -36,8 +36,8 @@ const Style = createGlobalStyle`
     }
 
     [data-reach-dialog-content] {
-        width: 80vw;
-        margin: 10vh auto;
+        width: 90vw;
+        margin: 5vh auto;
         background: white;
         outline: none;
         z-index: 3;
