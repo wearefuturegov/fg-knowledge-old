@@ -6,18 +6,37 @@ import theme from "../_theme"
 const Outer = styled(Link)`
     background: ${theme.white};
     box-shadow: 0px 2px 4px ${theme.dark}10;
-    display: block;
+    /* display: block; */
     text-decoration: none;
     transition: box-shadow 0.1s ease-out;
-    padding: 25px;
     &:hover{
         box-shadow: 0px 2px 12px ${theme.dark}10 !important;
     }
     &:focus{
         outline: 3px solid ${theme.focus}
     }
+    display: flex;
+    flex-direction: row;
+`
+
+const Inner = styled.div`
+    padding: 25px;
     @media screen and (min-width: ${theme.l}){
         padding: 35px;
+    }
+`
+
+const Image = styled.div`
+    display: none;
+    @media screen and (min-width: ${theme.l}){
+        display: block;
+        width: 150px;
+        filter: brightness(0.95);
+        height: 100;
+        background-image: url(${props => props.src});
+        flex-shrink: 0;
+        background-size: cover;
+        background-position: center;
     }
 `
 
@@ -38,8 +57,11 @@ const Card = ({
     image
 }) => 
     <Outer to={to}>
-        <Caption>{caption}</Caption>
-        <Headline>{headline}</Headline>
+        <Image src={image}/>
+        <Inner>
+            <Caption>{caption}</Caption>
+            <Headline>{headline}</Headline>
+        </Inner>
     </Outer>
 
 export default Card
