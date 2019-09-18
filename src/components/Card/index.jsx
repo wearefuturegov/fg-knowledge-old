@@ -9,23 +9,16 @@ const Outer = styled(Link)`
     display: block;
     text-decoration: none;
     transition: box-shadow 0.1s ease-out;
+    padding: 25px;
     &:hover{
         box-shadow: 0px 2px 12px ${theme.dark}10 !important;
     }
     &:focus{
         outline: 3px solid ${theme.focus}
     }
-`
-
-const Img = styled.img`
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    background: ${theme.panelBackground};
-`
-
-const Inner = styled.div`
-    padding: 25px;
+    @media screen and (min-width: ${theme.l}){
+        padding: 35px;
+    }
 `
 
 const Headline = styled.h3`
@@ -45,11 +38,8 @@ const Card = ({
     image
 }) => 
     <Outer to={to}>
-        <Img src={image} alt=""/>
-        <Inner>
-            <Caption>{caption}</Caption>
-            <Headline>{headline}</Headline>
-        </Inner>
+        <Caption>{caption}</Caption>
+        <Headline>{headline}</Headline>
     </Outer>
 
 export default Card
