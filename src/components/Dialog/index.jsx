@@ -39,6 +39,10 @@ const Headline = styled.h1`
     color: ${theme.dark};
     margin-bottom: 10px;
     @media screen and (min-width: ${theme.l}){
+        font-size: 2.2em;
+    }
+    @media screen and (min-width: ${theme.l}){
+        font-size: 2.4em;
         margin-bottom: 15px;
     }
 `
@@ -102,6 +106,18 @@ const CloseButton = styled.button`
     }
 `
 
+const LinkBrick = styled.a`
+    display: block;
+    background: ${theme.white};
+    box-shadow: 0px 2px 4px ${theme.dark}25;
+    margin-bottom: 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    @media screen and (min-width: ${theme.m}){
+        margin-bottom: 45px;
+    }
+`
+
 const ArtefactDialog = ({
     match,
     history,
@@ -119,6 +135,8 @@ const ArtefactDialog = ({
 
     const handleDismiss = () => history.push("/")
 
+    console.log(artefact)
+
     return(
         <StyledDialog onDismiss={handleDismiss}>
             <CloseButton onClick={handleDismiss}><img src={cross} alt="close"/></CloseButton>
@@ -129,6 +147,14 @@ const ArtefactDialog = ({
                 </Description>
             </Header>
             <Body>
+
+                {artefact.fileUrLs &&
+                    <LinkBrick href={artefact.fileUrLs[0]} target="blank">
+                        {artefact.fileUrLs[0]}
+                    </LinkBrick>
+                }
+
+
                 <FactoidList>
                     {artefact.client &&
                         <Factoid>
