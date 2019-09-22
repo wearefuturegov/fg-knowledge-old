@@ -6,10 +6,11 @@
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@loadable/component": "^5.10.2",
     "@reach/dialog": "^0.2.9",
+    "algoliasearch": "^3.34.0",
     "contentful": "^7.9.1",
-    "instantsearch.js": "^3.6.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-instantsearch-dom": "^5.7.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "styled-components": "^4.3.2"

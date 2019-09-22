@@ -128,6 +128,8 @@ const ArtefactDialog = ({
 
     const handleDismiss = () => history.push("/")
 
+    console.log(artefact)
+
     return(
         <StyledDialog onDismiss={handleDismiss}>
             <CloseButton onClick={handleDismiss}><CloseImg src={cross} alt="close"/></CloseButton>
@@ -153,7 +155,7 @@ const ArtefactDialog = ({
                 <FactoidList>
                         <Factoid>
                             <Label>Client</Label>
-                            <Value>{artefact.client ? artefact.client.fields.name : ""}</Value>
+                            <Value>{(artefact.client && artefact.client.fields) ? artefact.client.fields.name : ""}</Value>
                         </Factoid>
                         <Factoid>
                             <Label>Subject</Label>

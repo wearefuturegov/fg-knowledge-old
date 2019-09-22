@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import theme from "../_theme"
-import eyeglass from "./eyeglass.svg"
-import instantsearch from "instantsearch.js"
+// import eyeglass from "./eyeglass.svg"
+import Search from "../../services/algolia"
+import { SearchBox, Hits } from "react-instantsearch-dom"
 
 const Outer = styled.section`
     position: relative;
@@ -83,34 +84,15 @@ const Img = styled.img`
     transform: translateY(3px);
 `
 
-const SearchBar = () => {
+const SearchBar = () =>
+    <Outer>
 
-    const [scope, setScope] = useState("everything")
-    const [query, setQuery] = useState("")
+            <Container>
+                <Search>
+                    
+                </Search>
+            </Container>
 
-    const handleSubmit = e => {
-        e.preventDefault()
-    }
-
-    return(
-        <Outer>
-            <Form onSubmit={handleSubmit}>
-                <Container>
-                    <InvisibleLabel htmlFor="query">Search query</InvisibleLabel>
-                    <Input
-                        type="text"
-                        name="query"
-                        placeholder="Enter search terms"
-                        required
-                        value={query}
-                        onChange={e => setQuery(e.target.value)}
-                    />
-                    <Button><Img src={eyeglass} alt="Submit search"/></Button>
-                </Container>
-
-            </Form>
-        </Outer>
-    )
-}
+    </Outer>
 
 export default SearchBar
