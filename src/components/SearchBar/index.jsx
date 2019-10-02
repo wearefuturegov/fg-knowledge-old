@@ -3,7 +3,6 @@ import styled from "styled-components"
 import theme from "../_theme"
 // import eyeglass from "./eyeglass.svg"
 import Search from "../../services/algolia"
-import { SearchBox, Hits } from "react-instantsearch-dom"
 
 const Outer = styled.section`
     position: relative;
@@ -88,9 +87,7 @@ const SearchBar = () =>
     <Outer>
 
             <Container>
-                <Search>
-                    
-                </Search>
+                <Search/>
             </Container>
 
     </Outer>

@@ -7,19 +7,20 @@ const searchClient = algoliasearch(
     process.env.REACT_APP_ALGOLIA_API_KEY
 )
 
+const Hit = ({
+    hit
+}) => 
+    <h1>{hit.fields.title["en-GB"]}</h1>
 
-const Hit = (props) => 
-    <h1>result {console.log(props)}</h1>
-
-
-const Search = ({
-    children
-}) =>
+const Search = () =>
     <InstantSearch 
         searchClient={searchClient} 
         indexName="knowledge"
     >
-        {children}
+        <SearchBox>
+
+        </SearchBox>
+        <Hits hitComponent={Hit}/>
     </InstantSearch>
 
 export default Search
