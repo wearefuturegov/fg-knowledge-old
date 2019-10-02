@@ -63,7 +63,7 @@ const Img = styled.img`
     transform: translateY(3px);
 `
 
-const List = styled.ul`
+const SuggestionsList = styled.ul`
     list-style: none;
     position: absolute;
     top: 100%;
@@ -87,17 +87,10 @@ const List = styled.ul`
     }
 `
 
-const Result = styled.li`
-
-`
-
 const StyledLink = styled(Link)`
     display: block;
     text-decoration: none;
     padding: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: ${theme.grey};
     @media screen and (min-width: ${theme.l}) {
         font-size: 1.3em;
         padding: 10px 15px;
@@ -105,6 +98,18 @@ const StyledLink = styled(Link)`
     &:hover{
         background: ${theme.panelBackground};
     }
+`
+
+const ResultTitle = styled.h2`
+    font-size: 1.2em;
+    color: ${theme.dark};
+    margin-bottom: 5px;
+`
+
+const ResultCaption = styled.p`
+    text-transform: capitalize;
+    color: ${theme.grey};
+    font-size: 0.9em;
 `
 
 const Autocomplete = ({ hits, currentRefinement, refine }) => {
@@ -130,15 +135,17 @@ const Autocomplete = ({ hits, currentRefinement, refine }) => {
                 <Img src={eyeglass} alt="Search"/>
             </Button>
             {showResults && currentRefinement.length > 1 &&
-                <List>
+                <SuggestionsList>
                     {hits.slice(0,6).map(hit => (
-                        <Result key={hit.objectID}>
+                        <li key={hit.objectID}>
+                            {console.log(hit)}
                             <StyledLink to={`/artefact/${hit.fields.slug && hit.fields.slug["en-GB"]}`}>
-                                {hit.fields.title["en-GB"]}
+                                <ResultTitle>{hit.fields.title["en-GB"]}</ResultTitle>
+                                <ResultCaption>{hit.sys.contentType.sys.id}</ResultCaption>
                             </StyledLink>
-                        </Result>
+                        </li>
                     ))}
-                </List>
+                </SuggestionsList>
             }
         </Form>
     )

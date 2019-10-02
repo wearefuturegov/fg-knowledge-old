@@ -7,7 +7,6 @@ const searchClient = algoliasearch(
     process.env.REACT_APP_ALGOLIA_API_KEY
 )
 
-
 const Search = ({
     children
 }) =>
