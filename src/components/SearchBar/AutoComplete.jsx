@@ -98,6 +98,10 @@ const StyledLink = styled(Link)`
     &:hover{
         background: ${theme.panelBackground};
     }
+    &:focus{
+        outline: none;
+        background: ${theme.panelBackground};
+    }
 `
 
 const ResultTitle = styled.h2`

@@ -6,7 +6,6 @@ import theme from "../_theme"
 const Outer = styled(Link)`
     background: ${theme.white};
     box-shadow: 0px 2px 4px ${theme.dark}10;
-    /* display: block; */
     text-decoration: none;
     transition: box-shadow 0.1s ease-out;
     &:hover{
@@ -17,6 +16,16 @@ const Outer = styled(Link)`
     }
     display: flex;
     flex-direction: row;
+    animation: fadeIn 0.2s ease-out;
+
+    @keyframes fadeIn{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
 `
 
 const Inner = styled.div`

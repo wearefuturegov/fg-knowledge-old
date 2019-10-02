@@ -8,6 +8,7 @@ export default {
     placeholderDark: "#706A8D",
     placeholder: "#C8C5D7",
     panelBackground: "#F2F2F4",
+    skeleton: "#EAEAEA",
     white: "#FFFFFF",
     focus: "#F7C745",
 
