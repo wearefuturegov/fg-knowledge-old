@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import theme from "../_theme"
 import external from "./external.svg"
+import { truncateChars } from "../../services/utils"
 
 const LinkBrick = styled.a`
     display: flex;
@@ -13,7 +14,6 @@ const LinkBrick = styled.a`
     text-decoration: none;
     position: relative;
     border-radius: 5px;
-    color: ${theme.placeholder};
     transition: box-shadow 0.1s ease-out;
     @media screen and (min-width: ${theme.m}){
         margin-bottom: 45px;
@@ -55,6 +55,16 @@ const Img = styled.img`
     top: 5px;
 `
 
+const Message = styled.p`
+    /* font-weight: bold; */
+    color: ${theme.dark};
+`
+
+const Url = styled.p`
+    color: ${theme.placeholder};
+    margin-top: 5px;
+`
+
 
 const Brick = ({
     href,
@@ -66,7 +76,8 @@ const Brick = ({
         <Image src={image}/>
         
         <Inner>
-            {href}
+            <Message>View file</Message>
+            <Url>{truncateChars(href, 40)}</Url>
         </Inner>
     </LinkBrick>
 
