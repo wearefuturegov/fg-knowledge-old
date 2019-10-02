@@ -9,8 +9,12 @@ const client = createClient({
 export const fetchAllContent = async () => {
     const entries = await client.getEntries()
     return {
-        artefactItems: entries.items.filter(entry => entry.sys.contentType.sys.id === "artefact").map(item => {return {...item.fields}}),
-        guideItems: entries.items.filter(entry => entry.sys.contentType.sys.id === "guide").map(item => {return {...item.fields}})
+        artefactItems: entries.items
+            .filter(entry => entry.sys.contentType.sys.id === "artefact")
+            .map(item => {return {...item.fields}}),
+        guideItems: entries.items
+            .filter(entry => entry.sys.contentType.sys.id === "guide")
+            .map(item => {return {...item.fields}})
     }
 }
 
