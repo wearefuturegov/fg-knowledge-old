@@ -6,6 +6,7 @@ import theme from "../_theme"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import cross from "./cross.svg"
 import LinkBrick from "./LinkBrick"
+import Skeleton from "./SkeletonDialog"
 
 const StyledDialog = styled(Dialog)`
     max-width: 600px;
@@ -13,6 +14,17 @@ const StyledDialog = styled(Dialog)`
     overflow: hidden;
     box-shadow: 0px 2px 4px ${theme.dark}25;
     position: relative;
+    animation: throwUp 0.2s ease-out;
+    @keyframes throwUp {
+        from{
+            transform: scale(1.1) translateY(5px);
+            opacity: 0;
+        }
+        to{
+            transform: scale(1) translateY(0px);
+            opacity: 1;
+        }
+    }
 `
 
 const Header = styled.header`
@@ -72,14 +84,12 @@ const FactoidList = styled.dl`
     }
 `
 
-const Factoid = styled.div``
-
 const Label = styled.dt`
-    color: ${theme.dark};
-    font-weight: 600;
-    font-size: 0.85em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    color: ${theme.grey};
+    /* font-weight: 600; */
+    font-size: 0.9em;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 2px; */
     margin-bottom: 5px;
     @media screen and (min-width: ${theme.m}){
         margin-bottom: 10px;
@@ -88,9 +98,9 @@ const Label = styled.dt`
 
 const Value = styled.dd`
     color: ${theme.dark};
-    font-size: 1.2em;
+    font-size: 1.3em;
     @media screen and (min-width: ${theme.m}){
-        font-size: 1.3em;
+        font-size: 1.4em;
     }
 `
 
@@ -101,6 +111,7 @@ const CloseButton = styled.button`
     cursor: pointer;
     background: none;
     border: none;
+    z-index: 2;
     &:focus{
         background: ${theme.focus};
         outline: 3px solid ${theme.focus};      
@@ -128,49 +139,53 @@ const ArtefactDialog = ({
 
     const handleDismiss = () => history.push("/")
 
-    console.log(artefact)
-
     return(
         <StyledDialog onDismiss={handleDismiss}>
             <CloseButton onClick={handleDismiss}><CloseImg src={cross} alt="close"/></CloseButton>
-            <Header>
-                {artefact &&
-                    <>
-                        <Headline>{artefact.title}</Headline>
-                        <Description>
-                            {documentToReactComponents(artefact.description)}
-                        </Description>
-                    </>
-                }
-            </Header>
-            <Body>
+            {artefact ?
+                <>
+                    <Header>
+                        {artefact &&
+                            <>
+                                <Headline>{artefact.title}</Headline>
+                                <Description>
+                                    {documentToReactComponents(artefact.description)}
+                                </Description>
+                            </>
+                        }
+                    </Header>
+                    <Body>
 
-                {artefact.fileUrLs &&
-                    <LinkBrick 
-                        href={artefact.fileUrLs[0]} 
-                        image={artefact.image ? `https:${artefact.image.fields.file.url}?w=400` : ""}
-                    />
-                }
+                        {artefact.fileUrLs &&
+                            <LinkBrick 
+                                href={artefact.fileUrLs[0]} 
+                                image={artefact.image ? `https:${artefact.image.fields.file.url}?w=400` : ""}
+                            />
+                        }
 
-                <FactoidList>
-                        <Factoid>
-                            <Label>Client</Label>
-                            <Value>{(artefact.client && artefact.client.fields) ? artefact.client.fields.name : ""}</Value>
-                        </Factoid>
-                        <Factoid>
-                            <Label>Subject</Label>
-                            <Value>{artefact.subject ? artefact.subject.fields.name : ""}</Value>
-                        </Factoid>
-                        <Factoid>
-                            <Label>Project</Label>
-                            <Value>{artefact.project || ""}</Value>
-                        </Factoid>
-                        <Factoid>
-                            <Label>Point of contact</Label>
-                            <Value>{artefact.pointOfContact || ""}</Value>
-                        </Factoid>
-                </FactoidList>
-            </Body>
+                        <FactoidList>
+                                <div>
+                                    <Label>Client</Label>
+                                    <Value>{(artefact.client && artefact.client.fields) ? artefact.client.fields.name : ""}</Value>
+                                </div>
+                                <div>
+                                    <Label>Subject</Label>
+                                    <Value>{artefact.subject ? artefact.subject.fields.name : ""}</Value>
+                                </div>
+                                <div>
+                                    <Label>Project</Label>
+                                    <Value>{artefact.project || ""}</Value>
+                                </div>
+                                <div>
+                                    <Label>Point of contact</Label>
+                                    <Value>{artefact.pointOfContact || ""}</Value>
+                                </div>
+                        </FactoidList>
+                    </Body>
+                </>
+                :
+                <Skeleton/>
+            }
         </StyledDialog>
     )
   }

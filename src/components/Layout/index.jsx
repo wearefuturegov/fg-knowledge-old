@@ -27,7 +27,7 @@ const Style = createGlobalStyle`
         left: 0;
         overflow: auto;
         z-index: 2;
-        animation: fadeIn 0.1s ease-out;
+        animation: fadeIn 0.2s ease-out;
     }
 
     @keyframes fadeIn{
