@@ -16,9 +16,13 @@ const Outer = styled.section`
         grid-template-columns: 1fr 3fr;
         grid-column-gap: 80px;
     }
-    /* @media screen and (min-width: ${theme.xl}){
-        grid-column-gap: 60px;
-    } */
+    /* Space out sibling sections on a page */
+    & + section {
+        margin-top: 40px;
+        @media screen and (min-width: ${theme.m}) {
+            margin-top: 80px;
+        }
+    }
 `
 
 const Header = styled.header`
@@ -78,12 +82,14 @@ const ContentArea = styled.div`
 `
 
 const PromoModule = ({
+    headline,
+    intro,
     children
 }) =>
     <Outer>
         <Header>
-            <Headline>Artefacts</Headline>
-            <Intro>Examples of design, tech and change artefacts from our projects.</Intro>
+            <Headline>{headline}</Headline>
+            <Intro>{intro}</Intro>
             <SeeAll to="/artefacts">See all</SeeAll>
         </Header>
         <ContentArea>

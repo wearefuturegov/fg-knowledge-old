@@ -5,6 +5,15 @@ const client = createClient({
   accessToken: process.env.REACT_APP_CONTENT_DELIVERY_TOKEN
 })
 
+// Return an array of guides and artefacts, for the homepage
+export const fetchAllContent = async () => {
+    const entries = await client.getEntries()
+    return {
+        artefactItems: entries.items.filter(entry => entry.sys.contentType.sys.id === "artefact").map(item => {return {...item.fields}}),
+        guideItems: entries.items.filter(entry => entry.sys.contentType.sys.id === "guide").map(item => {return {...item.fields}})
+    }
+}
+
 // Return an array of all artefacts
 export const fetchArtefacts = async () => {
     const entries = await client.getEntries({
@@ -21,3 +30,4 @@ export const fetchArtefactBySlug = async slug => {
     })
     return matches.items
 }
+
