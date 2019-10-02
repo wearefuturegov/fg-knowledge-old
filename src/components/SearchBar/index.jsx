@@ -3,6 +3,7 @@ import styled from "styled-components"
 import theme from "../_theme"
 // import eyeglass from "./eyeglass.svg"
 import Search from "../../services/algolia"
+import { SearchBox, Hits } from "react-instantsearch-dom"
 
 const Outer = styled.section`
     position: relative;
@@ -83,11 +84,22 @@ const Img = styled.img`
     transform: translateY(3px);
 `
 
+const Hit = ({
+    hit
+}) => 
+    <h1>{hit.fields.title["en-GB"]}</h1>
+
+
 const SearchBar = () =>
     <Outer>
 
             <Container>
-                <Search/>
+                <Search>
+
+                <SearchBox/>
+                <Hits hitComponent={Hit}/>
+
+                </Search>
             </Container>
 
     </Outer>
