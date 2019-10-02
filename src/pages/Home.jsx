@@ -47,7 +47,7 @@ const Home = ({
                         />
                     )}
                 </PromoModule>
-                {/* <PromoModule
+                <PromoModule
                     headline="How-to guides"
                     intro="Guides from each of FutureGov's practices"
                 >
@@ -60,7 +60,7 @@ const Home = ({
                             to={`/artefact/${guide.slug}`}
                         />
                     )}
-                </PromoModule> */}
+                </PromoModule>
             </PageBody>
         </>
     )
