@@ -75,6 +75,14 @@ const Description = styled.div`
     }
 `
 
+const Link = styled.div`
+    margin-bottom: 40px;
+    background-color: ${theme.skeleton};
+    width: 100%;
+    height: 90px;
+    border-radius: 5px;
+`
+
 const FactoidList = styled.div`
     display: grid;
     grid-row-gap: 30px;
@@ -112,6 +120,7 @@ const ArtefactDialogSkeleton = () =>
             <Description/>
         </Header>
         <Body>
+            <Link/>
             <FactoidList>
                     <div>
                         <Label/>
