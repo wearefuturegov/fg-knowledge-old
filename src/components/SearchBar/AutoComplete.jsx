@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import styled from "styled-components"
 import theme from "../_theme"
 import { connectAutoComplete } from "react-instantsearch-dom"
@@ -119,7 +119,24 @@ const ResultCaption = styled.p`
 const Autocomplete = ({ hits, currentRefinement, refine }) => {
     const [showResults, setShowResults] = useState(false)
 
-    const ref = useClickOutside(() => setShowResults(false));
+    // const listRef = useRef(null)
+
+    // useEffect(()=>{
+    //     document.addEventListener("keydown", function(e) {
+    //         const active = document.activeElement;
+    //         console.log(active)
+    //         if(e.keyCode === 40 && active.nextSibling) {
+    //             console.log("derp")
+    //             active.nextSibling.focus();
+    //         }
+    //         if(e.keyCode === 38 && active.previousSibling) {
+    //             console.log("derp")
+    //             active.previousSibling.focus();
+    //         }
+    //     })
+    // }, [])
+
+    const ref = useClickOutside(() => setShowResults(false))
 
     return(
         <Form ref={ref}>
@@ -142,7 +159,6 @@ const Autocomplete = ({ hits, currentRefinement, refine }) => {
                 <SuggestionsList>
                     {hits.slice(0,6).map(hit => (
                         <li key={hit.objectID}>
-                            {console.log(hit)}
                             <StyledLink to={`/artefact/${hit.fields.slug && hit.fields.slug["en-GB"]}`}>
                                 <ResultTitle>{hit.fields.title["en-GB"]}</ResultTitle>
                                 <ResultCaption>{hit.sys.contentType.sys.id}</ResultCaption>
