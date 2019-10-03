@@ -5,7 +5,7 @@ import PageBody from "../components/PageBody"
 import PromoModule from "../components/PromoModule"
 import Card from "../components/Card"
 import { SkeletonGroup } from "../components/Card/Skeleton"
-import { fetchAllContent } from "../services/contentful"
+import { fetchAllContent } from "../lib/contentful"
 import { Route } from "react-router-dom"
 import Dialog from "../components/Dialog"
 

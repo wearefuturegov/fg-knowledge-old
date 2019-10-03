@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import theme from "../_theme"
-import Search from "../../services/algolia"
+import Search from "../../lib/algolia"
 import AutoComplete from "./AutoComplete"
 
 const Outer = styled.section`

@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import theme from "../_theme"
 import external from "./external.svg"
-import { truncateChars } from "../../services/utils"
+import { truncateChars } from "../../lib/utils"
 
 const LinkBrick = styled.a`
     display: flex;

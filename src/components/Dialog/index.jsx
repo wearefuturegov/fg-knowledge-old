@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Dialog } from "@reach/dialog"
-import { fetchArtefactBySlug } from "../../services/contentful"
+import { fetchArtefactBySlug } from "../../lib/contentful"
 import styled from "styled-components"
 import theme from "../_theme"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
