@@ -93,6 +93,7 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     padding: 10px;
     position: relative;
+    padding-right: 55px;
     @media screen and (min-width: ${theme.l}) {
         font-size: 1.3em;
         padding: 10px 15px;
