@@ -30,13 +30,7 @@ const Container = styled.div`
     }
 `
 
-const Hit = ({
-    hit
-}) => 
-    <h1>{hit.fields.title["en-GB"]}</h1>
-
-
-    const SearchBar = () =>
+const SearchBar = () =>
     <Outer>
         <Container>
             <Search>
