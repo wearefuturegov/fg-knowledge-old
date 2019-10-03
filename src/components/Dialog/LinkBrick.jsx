@@ -13,7 +13,7 @@ const LinkBrick = styled.a`
     margin-bottom: 35px;
     text-decoration: none;
     position: relative;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     transition: box-shadow 0.1s ease-out;
     @media screen and (min-width: ${theme.m}){
         margin-bottom: 45px;
@@ -56,8 +56,8 @@ const Img = styled.img`
 `
 
 const Message = styled.p`
-    /* font-weight: bold; */
-    color: ${theme.dark};
+    font-weight: bold;
+    color: ${theme.purple};
 `
 
 const Url = styled.p`

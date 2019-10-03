@@ -85,11 +85,11 @@ const FactoidList = styled.dl`
 `
 
 const Label = styled.dt`
-    color: ${theme.grey};
-    /* font-weight: 600; */
-    font-size: 0.9em;
-    /* text-transform: uppercase; */
-    /* letter-spacing: 2px; */
+    color: ${theme.dark};
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: 5px;
     @media screen and (min-width: ${theme.m}){
         margin-bottom: 10px;
@@ -99,6 +99,7 @@ const Label = styled.dt`
 const Value = styled.dd`
     color: ${theme.dark};
     font-size: 1.3em;
+    font-weight: 100;
     @media screen and (min-width: ${theme.m}){
         font-size: 1.4em;
     }

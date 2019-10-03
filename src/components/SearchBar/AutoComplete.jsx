@@ -5,6 +5,7 @@ import { connectAutoComplete } from "react-instantsearch-dom"
 import eyeglass from "./eyeglass.svg"
 import { Link } from "react-router-dom"
 import useClickOutside from "click-outside-hook"
+import external from "./external.svg"
 
 const Form = styled.form`
     position: relative;
@@ -91,6 +92,7 @@ const StyledLink = styled(Link)`
     display: block;
     text-decoration: none;
     padding: 10px;
+    position: relative;
     @media screen and (min-width: ${theme.l}) {
         font-size: 1.3em;
         padding: 10px 15px;
@@ -114,6 +116,12 @@ const ResultCaption = styled.p`
     text-transform: capitalize;
     color: ${theme.grey};
     font-size: 0.9em;
+`
+
+const External = styled.img`
+    position: absolute;
+    right: 15px;
+    top: 17px;
 `
 
 const Autocomplete = ({ hits, currentRefinement, refine }) => {
@@ -162,6 +170,7 @@ const Autocomplete = ({ hits, currentRefinement, refine }) => {
                             <StyledLink to={`/artefact/${hit.fields.slug && hit.fields.slug["en-GB"]}`}>
                                 <ResultTitle>{hit.fields.title["en-GB"]}</ResultTitle>
                                 <ResultCaption>{hit.sys.contentType.sys.id}</ResultCaption>
+                                {(hit.sys.contentType.sys.id !== "artefact") && <External src={external} alt=""/>}
                             </StyledLink>
                         </li>
                     ))}
