@@ -1,11 +1,11 @@
 import React from "react"
-import PageBody from "../components/PageBody"
+// import PageBody from "../components/PageBody"
 
 const NotFound = () =>
 
-        <PageBody>
+        // <PageBody>
             <h1>Not found</h1>
-        </PageBody>
+        {/* </PageBody> */}
 
 
 export default NotFound
