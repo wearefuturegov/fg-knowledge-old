@@ -13,12 +13,6 @@ export default {
     focus: "#F7C745",
 
     // Layout
-    maxWidth: "1500px",
-
-    // Breakpoints
-    s: "600px",
-    m: "850px",
-    ml: "1200px",
-    l: "1500px"
+    maxWidth: "1500px"
     
 }
