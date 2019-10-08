@@ -4,7 +4,7 @@ import theme from "../_theme"
 import { Link } from "react-router-dom"
 
 const Outer = styled(Link)`
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     background: ${theme.white};
     box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
@@ -12,33 +12,25 @@ const Outer = styled(Link)`
     text-decoration: none;
     &:focus{
         outline: 3px solid ${theme.focus};
-    }
-`
-
-const Inner = styled.div`
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    } */
 `
 
 const Title = styled.h3`
-    font-size: 1.2em;
+    /* font-size: 1.2em;
     color: ${theme.grey};
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 10px; */
 `
 
 const Team = styled.p`
-    display: inline;
+    /* display: inline;
     color: ${theme.dark};
     font-weight: 800;
-    margin-right: 5px;
+    margin-right: 5px; */
 `
 
 const Collection = styled(Link)`
-    font-size: 0.8em;
+    /* font-size: 0.8em;
     color: ${theme.grey};
     text-decoration: none;
     margin-top: auto;
@@ -48,32 +40,21 @@ const Collection = styled(Link)`
     &:focus{
         background: ${theme.focus};
         outline: 3px solid ${theme.focus};
-    }
+    } */
 `
 
-const Image = styled.img`
-    height: auto;
-    width: 120px;
-    object-fit: cover;
-    background: ${theme.skeleton};
-`
-
-const Card = ({
+const Trail = ({
     team,
     title,
     collection,
-    image,
     href
 }) =>
     <Outer href={href}>
-        <Image src={image} alt=""/>
-        <Inner>
-            <Title>
-                <Team>{team}</Team>
-                {title}
-            </Title>
-            <Collection href={`/${collection}`}>{collection}</Collection>
-        </Inner>
+        <Title>
+            <Team>{team}</Team>
+            {title}
+        </Title>
+        <Collection href={`/${collection}`}>{collection}</Collection>
     </Outer>
 
-export default Card
+export default Trail

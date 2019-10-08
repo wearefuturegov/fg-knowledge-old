@@ -4,27 +4,12 @@ import AccessibleRoute from "./components/AccessibleRoute"
 import loadable from "@loadable/component"
 import Layout from "./components/Layout"
 
-
-import Card from "./components/Card"
-
-
 const Home = loadable(()=> import("./pages/Home"))
 const NotFound = loadable(()=> import("./pages/NotFound"))
 
 const App = () =>
   <Router>
     <Layout>
-
-
-      <Card
-        title="Test"
-        team="Product and tech"
-        href="/"
-        collection="Guide"
-        image="http://placehold.it/120x120"
-        />
-
-
       <Switch>
         <AccessibleRoute path="/" component={Home}/>
         <AccessibleRoute component={NotFound}/>

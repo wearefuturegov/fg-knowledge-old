@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 // import { fetchAllContent } from "../lib/contentful"
 // import { Route } from "react-router-dom"
 // import Dialog from "../components/Dialog"
-// import Hero from "../components/Hero"
+import Hero from "../components/Hero"
 // import SearchBar from "../components/SearchBar"
 // import PageBody from "../components/PageBody"
 // import PromoModule from "../components/PromoModule"
@@ -27,6 +27,9 @@ const Home = ({
 
     return(
         <>
+            <Hero/>
+
+            test
         </>
     )
 }
