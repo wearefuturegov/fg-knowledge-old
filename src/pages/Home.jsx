@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react"
 // import { Route } from "react-router-dom"
 // import Dialog from "../components/Dialog"
 import Hero from "../components/Hero"
-// import SearchBar from "../components/SearchBar"
+import SearchBar from "../components/SearchBar"
 // import PageBody from "../components/PageBody"
 // import PromoModule from "../components/PromoModule"
 // import Card from "../components/Card"
@@ -28,8 +28,7 @@ const Home = ({
     return(
         <>
             <Hero/>
-
-            test
+            <SearchBar/>
         </>
     )
 }
