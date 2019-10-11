@@ -18,6 +18,9 @@ const Li = styled.li`
     display: inline;
     margin-right: 17px;
     font-size: 1.1rem;
+    &:last-of-type{
+        margin-right: 0px;
+    }
 `
 
 const StyledLink = styled(Link)`

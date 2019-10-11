@@ -5,59 +5,63 @@ import hero from "./hero.jpg"
 
 const Image = styled.section`
     background-size: cover;
-    background-position: top;
+    background-position: center;
     background-image: url(${hero});
-    min-height: 300px;
+    min-height: 220px;
     @media screen and (min-width: 600px) {
         min-height: 400px;
-        margin: 0 10px;
+        margin: 0 20px;
     }
     @media screen and (min-width: 1200px) {
-        min-height: 500px;
+        min-height: 450px;
+        margin: 0 30px;
     }
 `
 const TextBox = styled.div`
-    max-width: ${theme.maxWidth};
-    margin-top: -150px;
-    padding: 0px 5%;
+    margin-top: -50px;
+    padding: 0px 20px;
     @media screen and (min-width: 600px) {
         margin-top: -100px;
+        padding: 0px 40px;
     }
     @media screen and (min-width: 1200px) {
-        padding: 0px 10%;
+        padding: 0px 60px;
     }
 `
 
 const Message = styled.span`
     display: block;
     padding: 20px;
+    /* outline: 20px solid ${theme.white}; */
     color: ${theme.grey};
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     background: ${theme.white};
-    max-width: 80%;
     line-height: 1.3;
     @media screen and (min-width: 600px) {
-        font-size: 1.6rem;
-        max-width: 75%;
         padding: 25px;
+        font-size: 1.6rem;
     }
     @media screen and (min-width: 800px) {
-        font-size: 1.8rem;
         padding: 30px;
+        font-size: 1.9rem;
+    }
+    @media screen and (min-width: 1000px){
+        padding: 40px;
+        max-width: 66.67%;
     }
 `
 
 const Headline = styled.h1`
-    display: inline;
     font-weight: 900;
     color: ${theme.dark};
-    font-size: 1.3rem;
-    margin-right: 5px;
+    font-size: 1.6rem;
+    margin-right: 7px;
+    margin-bottom: 5px;
     @media screen and (min-width: 600px) {
-        font-size: 1.6rem;
+        display: inline;
     }
     @media screen and (min-width: 800px) {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
 `
 

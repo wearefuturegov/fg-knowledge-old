@@ -7,15 +7,14 @@ import { Link } from "react-router-dom"
 
 const Outer = styled.header`
     background: ${theme.white};
-    padding: 20px 5%;
+    padding: 20px;
     @media screen and (min-width: 1200px) {
-        padding: 20px 10%;
+        padding: 20px 30px;
     }
 `
 
 const Inner = styled.div`
     margin: 0 auto;
-    max-width: ${theme.maxWidth};
     display: flex;
     flex-direction: row;
     justify-content: space-between;
