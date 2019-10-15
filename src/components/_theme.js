@@ -13,6 +13,6 @@ export default {
     focus: "#F7C745",
 
     // Layout
-    maxWidth: "1500px"
+    maxWidth: "1100px"
     
 }

@@ -1,8 +1,7 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
 import theme from "../_theme"
-// import SiteHeader from "../SiteHeader"
-// import SiteFooter from "../SiteFooter"
+import SiteFooter from "../SiteFooter"
 
 const Style = createGlobalStyle`
 
@@ -46,18 +45,18 @@ const Style = createGlobalStyle`
     }
 `
 
-// const ColourWrapper = styled.div`
-//     background: ${theme.panelBackground};
-// `
+const ColourWrapper = styled.div`
+    background: ${theme.panelBackground};
+`
 
 const Layout = ({children}) =>
     <>
         <Style/>
-        {/* <ColourWrapper> */}
+        <ColourWrapper>
             {/* <SiteHeader/> */}
             {children}
-        {/* </ColourWrapper> */}
-        {/* <SiteFooter/> */}
+        </ColourWrapper>
+        <SiteFooter/>
     </>
 
 export default Layout

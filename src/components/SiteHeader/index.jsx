@@ -6,10 +6,13 @@ import logo from "./logo.svg"
 import whiteLogo from "./logo-white.svg"
 
 const Outer = styled.header`
-    padding: 25px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (min-width: 900px){
+        padding: 25px;
+    }
 `
 
 const Masthead = styled(Link)`
