@@ -41,7 +41,7 @@ const Headline = styled.h3`
 
 const Deck = styled.p`
     color: ${theme.grey};
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 `
 
 const Cta = styled.span`
@@ -70,7 +70,7 @@ const ComingSoon = styled.p`
 `
 
 export const TileGrid = styled.section`
-    padding: 20px;
+    padding: 40px 20px;
     max-width: ${theme.maxWidth};
     margin: 0 auto;
     display: grid;
