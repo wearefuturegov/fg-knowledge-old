@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
 import theme from "../_theme"
-import SiteHeader from "../SiteHeader"
+// import SiteHeader from "../SiteHeader"
 // import SiteFooter from "../SiteFooter"
 
 const Style = createGlobalStyle`
@@ -54,7 +54,7 @@ const Layout = ({children}) =>
     <>
         <Style/>
         {/* <ColourWrapper> */}
-            <SiteHeader/>
+            {/* <SiteHeader/> */}
             {children}
         {/* </ColourWrapper> */}
         {/* <SiteFooter/> */}

@@ -1,8 +1,13 @@
 import React from "react"
+import SiteHeader from "../components/SiteHeader"
+import Hero from "../components/Hero"
 
 const HomePage = () =>
     <>
-        Yo
+        <SiteHeader/>
+        <Hero>
+            <SiteHeader inverted/>
+        </Hero>
     </>
 
 export default HomePage
