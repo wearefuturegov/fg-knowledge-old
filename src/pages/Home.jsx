@@ -7,30 +7,29 @@ const tileItems = [
     {
         headline: "Artefacts",
         deck: "Deliverables and examples of specific work",
-        href: "/",
+        href: "/results?collection=artefacts",
         cta: "See artefacts"
     },
     {
         headline: "Guides",
-        deck: "Deliverables and examples of specific work",
-        href: "/",
+        deck: "Learn how to work in an impactful way",
+        href: "/results?collection=guides",
         cta: "See guides"
     },
     {
         headline: "Case studies",
-        deck: "Deliverables and examples of specific work",
-        href: "/",
+        deck: "In-depth explorations of our most impactful projects",
+        href: "/results?collection=case-studies",
         cta: "See case studies"
     },
     {
         headline: "Subject overviews",
-        deck: "Deliverables and examples of specific work"
+        deck: "The state of the policy areas and domains we work in"
     },
 ]
 
 const HomePage = () =>
     <>
-        <SiteHeader/>
         <Hero/>
         <TileGrid>
             {tileItems.map(item =>

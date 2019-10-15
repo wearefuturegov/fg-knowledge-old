@@ -5,7 +5,8 @@ import { Link } from "react-router-dom"
 import arrow from "./arrow.svg"
 
 const tileStyles = css`
-    display: block;
+    display: flex;
+    flex-direction: column;
     background-color: ${theme.white};
     padding: 25px;
     border: 0.5px solid ${theme.placeholder};
@@ -33,7 +34,8 @@ const OuterStatic = styled.div`
 
 const Headline = styled.h3`
     color: ${theme.dark};
-    margin-bottom: 5px;
+    font-weight: 900;
+    margin-bottom: 3px;
     font-size: 1.4em;
 `
 
@@ -43,6 +45,7 @@ const Deck = styled.p`
 `
 
 const Cta = styled.span`
+    margin-top: auto;
     font-weight: 900;
     color: ${theme.purple};
     display: flex;
@@ -62,7 +65,7 @@ const Cta = styled.span`
 `
 
 const ComingSoon = styled.p`
-    color: ${theme.dark};
+    color: ${theme.grey};
     font-weight: 900;
 `
 

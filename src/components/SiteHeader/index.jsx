@@ -67,15 +67,15 @@ const NavItem = styled(Link)`
 const navItems = [
     {
         label: "Artefacts",
-        href: "/"
+        href: "/results?collection=artefacts"
     },
     {
         label: "Guides",
-        href: "/"
+        href: "/results?collection=guides"
     },
     {
         label: "Case studies",
-        href: "/"
+        href: "/results?collection=case-studies"
     }
 ]
 
