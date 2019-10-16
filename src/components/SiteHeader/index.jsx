@@ -96,7 +96,7 @@ const SiteHeader = ({
                     to={item.href} 
                     key={item.href} 
                     inverted={inverted}
-                    >
+                >
                     {item.label}
                 </NavItem>
             )}

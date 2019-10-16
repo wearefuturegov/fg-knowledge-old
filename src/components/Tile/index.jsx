@@ -35,8 +35,8 @@ const OuterStatic = styled.div`
 const Headline = styled.h3`
     color: ${theme.dark};
     font-weight: 900;
-    margin-bottom: 3px;
-    font-size: 1.4em;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
 `
 
 const Deck = styled.p`
