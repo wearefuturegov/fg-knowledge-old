@@ -124,6 +124,7 @@ const SearchBar = () =>
                 type="text"
                 name="query"
                 placeholder="Try 'journey map'..."
+                autoComplete="off"
             />
             <Button type="submit">
                 <Icon src={eyeglass} alt="Submit search"/>
